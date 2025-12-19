@@ -27,6 +27,56 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <script>
+            function validar_form ()
+                {
+                    let nome_evento = document.getElementById('nome_evento');
+                    let desc_evento = document.getElementById('desc_evento');
+                    let data_evento = document.getElementById('data_evento');
+                    let local_evento = document.getElementById('local_evento');
+                    let endereco_evento_rua = document.getElementById('endereco_evento_rua');
+                    let endereco_evento_numero = document.getElementById('endereco_evento_numero');
+                    let endereco_evento_bairro = document.getElementById('endereco_evento_bairro');
+                    let email_evento = document.getElementById('email_evento');
+                    if (nome_evento.value == "") 
+                        {
+                            alert('Preencha o nome do seu evento.');
+                            return false;
+                        }
+                    if (desc_evento.value == "") 
+                        {
+                            alert('Preencha a descrição do seu evento.');
+                            return false;
+                        }
+                    if (data_evento.value == "") 
+                        {
+                            alert('Preencha a data do seu evento.');
+                            return false;
+                        }
+                    if (endereco_evento_rua.value == "") 
+                        {
+                            alert('Preencha o endereço da rua do seu evento.');
+                            return false;
+                        }
+                    if (endereco_evento_numero.value == "") 
+                        {
+                            alert('Preencha o endereço do número do seu evento.');
+                            return false;
+                        }
+                    if (endereco_evento_bairro.value == "") 
+                        {
+                            alert('Preencha o endereço do bairro do seu evento.');
+                            return false;
+                        }
+                    if (email_evento.value == "") 
+                        {
+                            alert('Preencha o seu Email');
+                            return false;
+                        }
+                    return true;
+                }
+                
+        </script>
     </head>
 
     <body>
@@ -156,32 +206,35 @@
                     </div>
                 </div>
                 </br>
-                <form>
+                <form onsubmit= "return validar_form()">
                     <div class="form-group">
                         <h1 class="mb-0">Cadastre o seu Evento:</h1>
                         <h5 class="text-secundary">Informe o nome do seu evento:</h5>
-                        <input type="text" id="txtnome"> 
+                        <input type="text" id="nome_evento"> 
                         <h5 class="text-secundary">Informe a descrição do seu evento:</h5>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea> 
-                        <h5 class="text-secundary">Informe a data do seu evento:</h5>
-                        <input type="date" id="txtnome">
-                        <h5 class="text-secundary">Informe a local do evento:</h5>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="desc_evento"></textarea> 
+                        <h5 class="text-secundary" >Informe a data do seu evento:</h5>
+                        <input type="date" id="data_evento">
+                        <h5 class="text-secundary" id="local_evento">Informe a local do evento:</h5>
                         <div class="row">
                             <div class="col-7">
-                                <input type="text" class="form-control" placeholder="Rua">
+                                <input type="text" class="form-control" placeholder="Rua" id="endereco_evento_rua">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Número">
+                                <input type="number" class="form-control" placeholder="Número" id="endereco_evento_numero">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Bairro">
+                                <input type="text" class="form-control" placeholder="Bairro" id="endereco_evento_bairro">
                             </div>
                         </div>
                         <h5 class="text-secundary">Informe o seu email:</h5>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@examplo.com">
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@examplo.com" id="email_evento">
                         <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar o seu email com mais ninguem.</small>
+                        </br>
+                        <input type="submit" class="btn-primary" value="Enviar">
                     </div> 
                 </form>
+                
             </div>
         </div>
         <!-- Services End -->
