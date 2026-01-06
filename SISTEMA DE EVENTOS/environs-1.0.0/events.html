@@ -36,42 +36,41 @@
                 let Data_evento = document.getElementById('Data_evento');
                 let Resenha = document.getElementById('Resenha');
 
-                let btnRecomeda = document.getElementById('btnRecomenda');
-                let btnNao_Recomenda = document.getElementById('btnNao_Recomenda');
+                let Recomendação = document.querySelector('input[name="Recomendação"]:checked');
 
                 let Nota = document.getElementById('Nota');
 
-                if (Nome_Usuario.value= '')
+                if (Nome_Usuario.value == '')
                 {
                     alert ('Por favor, preencha seu nome.');
                     return false;
                 }
 
-                if (Nome_evento.value='')
+                if (Nome_evento.value == '')
                 {
                     alert('Por favor, informe o nome do evento.');
                     return false;
                 }
 
-                if (Data_evento.value='')
+                if (Data_evento.value == '')
                 {
                     alert('Por favor, preencha a data do evento em que compareceu.');
                     return false;
                 }
 
-                if (Resenha.value='')
+                if (Resenha.value == '')
                 {
                     alert('Por favor, preencha a resenha sobre o evento.');
                     return false;
                 }
 
-                if (!btnRecomeda.checked && !btnNao_Recomenda.checked)
-                {
-                    alert('Por favor, informe se você recomenda o evento.');
-                    return false;
-                }
+               if (Recomendação == null)
+               {
+                alert("Selecione se recomenda ou não o evento.");
+                return false;
+               }
 
-                if (Nota.value='')
+                if (Nota.value == '')
                 {
                     alert('Por favor, informe a nota do evento.');
                     return false;
@@ -240,23 +239,35 @@
         </div>
         <!-- Events End -->
 
-
         <!--Resenha-->
         <div class="container-fluid event py-5">
             <div class="container py-5">
-                <div class="col-lg-8">
-                    <h1 class="mb-0"> Deixe sua Resenha Sobre um Evento</h1>
+                <div class="form-group">
+                    <h1 class="mb-0"> Deixe sua Resenha Sobre um Evento:</h1>
                     <form onsubmit = "return validar_form()">
+                    <h5 class='text-secundary'> Informe seu Nome:</h5>
+                    <input type="text" id="Nome_Usuario">
+                    <h5 class='text-secundary'> Informe o Nome do Evento: </h5>
+                    <input type="text" id="Nome_evento">
+                    <h5 class='text-secundary'> Informe a Data em que Compareceu ao Evento: </h5>
+                    <input type="date" id="Data_evento">
+                    <h5 class='text-secundary'> Escreva a sua Resenha: </h5>
+                    <textarea class="form-control" type="text" id="Resenha" rows="6"> </textarea><br>
+                    
+                    <h5 class="text-secundary">Você Recomenda este evento?</h5>
+                    <input type="radio" name="Recomendação"> Sim
+                    <input type="radio" name="Recomendação"> Não
 
+                    <h5 class='text-secundary'> Dê uma Nota para o Evento de 0 a 10:</h5>
+                    <input type="number" class="form-control" id="Nota" min="0" max="10"><br>
 
-
-
-
-
+                    <input type="submit" class="btn-primary" value="Enviar Resenha"></input>
                     </form>
                 </div>
             </div>
         </div>
+
+
         <!-- Footer Start -->
         <div class="container-fluid footer bg-dark text-body py-5">
             <div class="container py-5">
