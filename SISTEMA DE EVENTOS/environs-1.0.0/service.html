@@ -27,6 +27,7 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             function validar_form ()
                 {
@@ -38,44 +39,81 @@
                     let endereco_evento_numero = document.getElementById('endereco_evento_numero');
                     let endereco_evento_bairro = document.getElementById('endereco_evento_bairro');
                     let email_evento = document.getElementById('email_evento');
-                    if (nome_evento.value == "") 
+                    if (nome_evento.value == '') {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Preencha o nome do seu evento!',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)'
+                        });
+                    return false;
+                    }
+                    if (desc_evento.value == '') 
                         {
-                            alert('Preencha o nome do seu evento.');
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha a descrição do seu evento!',
+                            });
                             return false;
                         }
-                    if (desc_evento.value == "") 
+                    if (data_evento.value == '') 
                         {
-                            alert('Preencha a descrição do seu evento.');
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha a data do seu evento!',
+                        });
                             return false;
                         }
-                    if (data_evento.value == "") 
+                    if (endereco_evento_rua.value == '') 
                         {
-                            alert('Preencha a data do seu evento.');
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha o seu endereço com a rua do local do seu evento!',
+                        });
                             return false;
                         }
-                    if (endereco_evento_rua.value == "") 
+                    if (endereco_evento_numero.value == ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha o seu endereço com o numero do local do seu evento!',
+                        });
+                        return false;
+                    }
+                    if (endereco_evento_bairro.value == ''){
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha o seu endereço com  o bairro do local do seu evento!',
+                        });
+                        return false;
+                    }
+                    if (email_evento.value == '') 
                         {
-                            alert('Preencha o endereço da rua do seu evento.');
+                           Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha o seu email!',
+                        });
                             return false;
                         }
-                    if (endereco_evento_numero.value == "") 
-                        {
-                            alert('Preencha o endereço do número do seu evento.');
-                            return false;
-                        }
-                    if (endereco_evento_bairro.value == "") 
-                        {
-                            alert('Preencha o endereço do bairro do seu evento.');
-                            return false;
-                        }
-                    if (email_evento.value == "") 
-                        {
-                            alert('Preencha o seu Email');
-                            return false;
-                        }
-                    return true;
-                }
-                
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Terminado',
+                    text: 'Seu cadastro de evento foi realizado com sucesso.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#007bff' 
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                    document.querySelector('form').submit(); 
+                    }
+                    });
+                    return false;
+                }  
         </script>
     </head>
 
@@ -206,16 +244,17 @@
                     </div>
                 </div>
                 </br>
+        <!--Formulário de Cadastrar evento-->
                 <form onsubmit= "return validar_form()">
                     <div class="form-group">
                         <h1 class="mb-0">Cadastre o seu Evento:</h1>
                         <h5 class="text-secundary">Informe o nome do seu evento:</h5>
-                        <input type="text" id="nome_evento"> 
+                        <input type="text" id="nome_evento" class="form-control"> 
                         <h5 class="text-secundary">Informe a descrição do seu evento:</h5>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="desc_evento"></textarea> 
+                        <textarea class="form-control" rows="3" id="desc_evento"></textarea> 
                         <h5 class="text-secundary" >Informe a data do seu evento:</h5>
-                        <input type="date" id="data_evento">
-                        <h5 class="text-secundary" id="local_evento">Informe a local do evento:</h5>
+                        <input type="date" id="data_evento" class="form-control">
+                        <h5 class="text-secundary">Informe a local do evento:</h5>
                         <div class="row">
                             <div class="col-7">
                                 <input type="text" class="form-control" placeholder="Rua" id="endereco_evento_rua">
@@ -228,7 +267,7 @@
                             </div>
                         </div>
                         <h5 class="text-secundary">Informe o seu email:</h5>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nome@examplo.com" id="email_evento">
+                        <input type="email" class="form-control" placeholder="nome@examplo.com" id="email_evento">
                         <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar o seu email com mais ninguem.</small>
                         </br>
                         <input type="submit" class="btn-primary" value="Enviar">
