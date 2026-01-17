@@ -1,14 +1,14 @@
 /*** Cores  do CSS ***/
 :root {
     /* COR PRINCIPAL*/
-    --bs-primary: #28a745 !important; 
+    --bs-primary: #306289 !important; 
     
     /* COR SECUNDÁRIA (Usada em detalhes e hover) */
-    --bs-secondary: #28a070 !important; 
-    
+    --bs-secondary: #5C799D !important; 
+    --bs-info: #6695C6 !important;
     /* Outras cores*/
-    --bs-dark: #1d85ec !important;
-    --bs-light: #2172c4 !important;
+    --bs-dark: #306289 !important;
+    --bs-light: #AFCBE6 !important;
 }
 
 /*** Spinner Start ***/
@@ -45,8 +45,11 @@
 .text-secondary {
     color: var(--bs-secondary) !important;
 }
-body, p {
+body {
     color: var(--bs-dark) !important; /* Ou use #333333 se preferir um cinza fixo */
+}
+p {
+    color: var(--bs-dark) !important;
 }
 a {
     color: var(--bs-primary);
