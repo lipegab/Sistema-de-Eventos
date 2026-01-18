@@ -28,6 +28,8 @@
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
             function validar_form()
             {
@@ -42,43 +44,93 @@
 
                 if (Nome_Usuario.value == '')
                 {
-                    alert ('Por favor, preencha seu nome.');
+                    Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text : 'Por favor, preencha seu nome.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
                 if (Nome_evento.value == '')
                 {
-                    alert('Por favor, informe o nome do evento.');
+                    
+                    Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text:'Por favor, informe o nome do evento.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
                 if (Data_evento.value == '')
                 {
-                    alert('Por favor, preencha a data do evento em que compareceu.');
+                     Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'Por favor, preencha a data do evento em que compareceu.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
                 if (Resenha.value == '')
                 {
-                    alert('Por favor, preencha a resenha sobre o evento.');
+                     Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text:'Por favor, preencha a resenha sobre o evento.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
                if (Recomendação == null)
                {
-                alert("Selecione se recomenda ou não o evento.");
+                  Swal.fire
+                 ({
+                 icon: 'error',
+                 title: 'Erro',
+                 text: 'Selecione se recomenda ou não o evento.',
+                 confirmButtonText: 'OK',
+                 confirmButtonColor: 'var(--bs-primary)',
+                  });
                 return false;
                }
 
                 if (Nota.value == '')
                 {
-                    alert('Por favor, informe a nota do evento.');
+                    Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text:'Por favor, informe a nota do evento.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
                 if (Nota.value <0 || Nota.value > 10)
                 {
-                    alert('A nota deve estar entre 0 e 10.');
+                    Swal.fire
+                    ({
+                    icon: 'error',
+                    title: 'Erro',
+                    text:'A nota deve estar entre 0 e 10.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)',
+                     });
                     return false;
                 }
 
