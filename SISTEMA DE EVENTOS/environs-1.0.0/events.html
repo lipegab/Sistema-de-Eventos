@@ -133,10 +133,19 @@
                      });
                     return false;
                 }
-
-                alert('O formulário foi enviado com sucesso!');
-                return true;
-            }
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Terminado',
+                    text: 'Seu cadastro de evento foi realizado com sucesso.',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: '#007bff' 
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                    document.querySelector('form').submit(); 
+                    }
+                    });
+                    return false;
+                }  
         </script>
 
 
