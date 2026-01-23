@@ -48,6 +48,12 @@
 body {
     color: var(--bs-dark) !important; /* Ou use #333333 se preferir um cinza fixo */
 }
+h5{
+    font-size: 27px;
+}
+.my-4,.mb-4{
+    text-align: justify;
+}
 p {
     color: var(--bs-dark) !important;
 }
