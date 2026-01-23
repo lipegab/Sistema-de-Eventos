@@ -4,7 +4,7 @@
     --bs-primary: #306289 !important; 
     
     /* COR SECUNDÁRIA (Usada em detalhes e hover) */
-    --bs-secondary: #5C799D !important; 
+    --bs-secondary: #f5e3c9 !important; 
     --bs-info: #6695C6 !important;
     /* Outras cores*/
     --bs-dark: #306289 !important;
@@ -59,7 +59,7 @@ a:hover {
     color: var(--bs-secondary); 
 }
 .form-control{
-    border-color: var(--bs-secondary)!important;
+    border-color: var(--bs-primary)!important;
 }
 .form-control:focus{
     border-color: var(--bs-primary)!important;
