@@ -29,6 +29,7 @@
         <link href="css/style.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
+            // Função para valdiaro o formulário de cadastrar um evento
             function validar_form ()
                 {
                     let nome_evento = document.getElementById('nome_evento');
@@ -118,14 +119,53 @@
                     title: 'Terminado',
                     text: 'Seu cadastro de evento foi realizado com sucesso.',
                     confirmButtonText: 'OK',
-                    confirmButtonColor: 'var(--bt-primary)'
+                    confirmButtonColor: 'var(--bs-primary)'
                     }).then((result) => {
                     if (result.isConfirmed) {
-                    document.querySelector('form').submit(); 
+                    document.getElementById("evento_form").submit(); 
                     }
                     });
                     return false;
-                }  
+                }
+            // Função para validar o formulário de sugestão para o sistema de eventos.
+            function validar_form_2()
+            {
+                let email_sugestao = document.getElementById('email_sugestao');
+                let evento_sugestao = document.getElementById('evento_sugestao');
+                if (email_sugestao.value == '') {
+                        Swal.fire({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Preencha o email para conseguir enviar a sua sugestão!',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)'
+                        });
+                    return false;
+                    }
+                    if (evento_sugestao.value == '') 
+                        {
+                            Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Preencha a sua sugestão para o sistem de eventos!',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                            });
+                            return false;
+                        }
+                    Swal.fire({
+                    icon: 'success',
+                    title: 'Terminado',
+                    text: 'Sua sugestão foi enviada com sucesso, obrigado por colaborar com o projeto!',
+                    confirmButtonText: 'OK',
+                    confirmButtonColor: 'var(--bs-primary)'
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                    document.getElementById("sugestao_form").submit(); 
+                    }
+                    });
+                    return false;    
+            }
         </script>
     </head>
 
@@ -217,7 +257,7 @@
                         <div class="service-item">
                             <img src="img/imagem_sugestoes.png" class="img-fluid w-100" alt="Image">
                             <div class="service-link">
-                                <a href="#" class="h4 mb-0"> Envie uma sugestão!</a>
+                                <a href="#Enviar_Sugestao" class="h4 mb-0"> Envie uma sugestão!</a>
                             </div>
                         </div>
                         <p class="my-4">Aqui você poderá enviar uma sugestão de novas adições futuras para o Sistema de Eventos Culturais,
@@ -234,9 +274,9 @@
                         </p>
                     </div>
                 </div>
-                </br>
+                </br></br></br></br>
         <!--Formulário de Cadastrar evento-->
-                <form onsubmit= "return validar_form()">
+                <form onsubmit= "return validar_form()" id="evento_form">
                     <div class="form-group">
                         <h1 class="mb-0" id="Cadastrar_Evento" >Cadastre o seu Evento:</h1>
                         <h5 class="text-secundary">Informe o nome do seu evento:</h5>
@@ -264,7 +304,35 @@
                         <input type="submit" class="btn-primary" value="Enviar">
                     </div> 
                 </form>
-                
+            </br></br></br></br>
+            <!--Formulário Enviar Sugestão-->
+                <form  id = "sugestao_form" onsubmit= "return validar_form_2()">
+                    <div class="form-group">
+                        <h1 class="mb-0" id="Enviar_Sugestao" >Envie sua Sugestão</h1>
+                        <h5 class="text-secundary">Informe o seu email:</h5>
+                        <input type="email" class="form-control" placeholder="nome@examplo.com" id="email_sugestao">
+                        <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar o seu email com mais ninguem.</small>
+                        <h5 class="text-secundary">Sua sugestão:</h5>
+                        <textarea class="form-control" rows="5" id="evento_sugestao" placeholder="Descreva o que você gostaria que o sistema fizesse e como isso ajudaria a melhorar a experência."></textarea>
+                        </br>
+                        <input type="submit" class="btn-primary" value="Enviar">
+                    </div> 
+                </form>
+            </br></br></br></br>
+            <!--Formas de Contato-->
+            <h1 class="mb-0" id="Contato" >Nossas formas de contato:</h1>
+        </br>
+            <div class="col-lg-4">
+                <div class="bg-white p-4">
+                    <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                    <h4>Mail Us</h4>
+                    <p class="mb-0">info@example.com</p>
+                </div>
+                <div class="bg-white p-4">
+                    <i class="fa fa-phone-alt fa-2x text-primary mb-2"></i>
+                    <h4>Telephone</h4>
+                    <p class="mb-0">(+012) 3456 7890 123</p>
+                </div>
             </div>
         </div>
         <!-- Services End -->
