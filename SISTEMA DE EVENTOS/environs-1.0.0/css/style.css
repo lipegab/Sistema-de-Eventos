@@ -305,6 +305,7 @@ a:hover {
     border: 5px solid var(--bs-primary) !important;
     border-radius: 10px;
 }
+
 /*** Carousel End ***/
 
 
@@ -563,6 +564,16 @@ a:hover {
     border-top: 0; 
     border-color: var(--bs-white); 
     background: var(--bs-secondary);
+}
+
+.btn_mapa{
+    text-decoration: none;
+    cursor:pointer;
+    color: var(--bs-body);
+}
+
+.btn_mapa:hover{
+    color: var(--bs-primary);
 }
 /*** Events End ***/
 
