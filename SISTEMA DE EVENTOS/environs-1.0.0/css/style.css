@@ -597,7 +597,10 @@ a:hover {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+    
 }
+
+
 
 .blog .blog-item .blog-img:hover .blog-info {
     background: rgba(0, 0, 0, .6);
@@ -627,6 +630,12 @@ a:hover {
 
 .blog .blog-item .blog-img:hover .search-icon {
     opacity: 1;
+}
+
+.blog-item p {
+    font-size: 1.1rem; /* Tamanho do texto */
+    line-height: 1.6;  /* Espaçamento entre linhas para facilitar a leitura */
+    color: #555;
 }
 /*** Blog End ***/
 
