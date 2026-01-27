@@ -62,7 +62,7 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: var(--bs-secondary); 
+    color: var(--bs-light); 
 }
 .form-control{
     border-color: var(--bs-primary)!important;
@@ -311,7 +311,7 @@ a:hover {
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/breadcrumb-bg.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/imagem_fundo.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
