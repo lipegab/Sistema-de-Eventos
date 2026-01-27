@@ -589,7 +589,7 @@ a:hover {
     width: 100%;
     height: 100%;
     bottom: 0;
-    /*left: 0;*/
+    left: 0;
     padding: 20px;
     background: rgba(0, 0, 0, .2);
     color: var(--bs-white) !important;
@@ -598,6 +598,14 @@ a:hover {
     justify-content: center;
     transition: 0.5s;
     
+}
+
+.blog-info{
+    bottom: 0;    /* Alinha no fundo */
+    left: 0;      /* Alinha na esquerda */
+    background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para leitura (opcional) */
+    padding: 10px 15px;
+    z-index: 10;
 }
 
 
