@@ -127,45 +127,129 @@
                     });
                     return false;
                 }
-            // Função para validar o formulário de sugestão para o sistema de eventos.
-            function validar_form_2()
-            {
-                let email_sugestao = document.getElementById('email_sugestao');
-                let evento_sugestao = document.getElementById('evento_sugestao');
-                if (email_sugestao.value == '') {
+            
+        </script>
+
+        <script>
+        // Função para validar o formulário de sugestão para o sistema de eventos.
+            function validar_form()
+                {
+                    let Nome = document.getElementById('nomeUsuario');
+                    let Email = document.getElementById('emailUsuario');
+                    let Telefone = document.getElementById('telUsuario');
+                    let Assunto = document.getElementById('assuntoUsuario');
+                    let Mensagem = document.getElementById('msgUsuario');
+
+                    // Nome
+                    if (Nome.value == '')
+                    {
                         Swal.fire({
-                        icon: 'error',
-                        title: 'Erro',
-                        text: 'Preencha o email para conseguir enviar a sua sugestão!',
-                        confirmButtonText: 'OK',
-                        confirmButtonColor: 'var(--bs-primary)'
-                        });
-                    return false;
-                    }
-                    if (evento_sugestao.value == '') 
-                        {
-                            Swal.fire({
                             icon: 'error',
                             title: 'Erro',
-                            text: 'Preencha a sua sugestão para o sistem de eventos!',
+                            text: 'Por favor, preencha seu nome.',
                             confirmButtonText: 'OK',
                             confirmButtonColor: 'var(--bs-primary)',
-                            });
-                            return false;
-                        }
-                    Swal.fire({
-                    icon: 'success',
-                    title: 'Terminado',
-                    text: 'Sua sugestão foi enviada com sucesso, obrigado por colaborar com o projeto!',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: 'var(--bs-primary)'
-                    }).then((result) => {
-                    if (result.isConfirmed) {
-                    document.getElementById("sugestao_form").submit(); 
+                        });
+                        return false;
                     }
+
+                    // Email vazio
+                    if (Email.value == '')
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Por favor, preencha seu e-mail.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Email inválido
+                    if (!Email.value.includes('@'))
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Digite um e-mail válido.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Telefone vazio
+                    if (Telefone.value == '')
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Por favor, informe seu telefone.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Remove caracteres que não são números
+                    let telLimpo = Telefone.value.replace(/\D/g, '');
+
+                    // Telefone inválido
+                    if (telLimpo.length < 10)
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Digite um telefone válido.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Assunto
+                    if (Assunto.value == '')
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Por favor, informe o assunto.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Mensagem
+                    if (Mensagem.value == '')
+                    {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Erro',
+                            text: 'Por favor, digite sua mensagem.',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: 'var(--bs-primary)',
+                        });
+                        return false;
+                    }
+
+                    // Sucesso
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Enviado!',
+                        text: 'Mensagem enviada com sucesso.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: '#007bff'
+                    }).then((result) => {
+                        if (result.isConfirmed)
+                        {
+                            document.getElementById('formContato').submit();
+                        }
                     });
-                    return false;    
-            }
+
+                    return false;
+                }
         </script>
     </head>
 
@@ -295,22 +379,45 @@
                     </div> 
                 </form>
             </br>
-            <!--Formulário Enviar Sugestão-->
-                <form  id = "sugestao_form" onsubmit= "return validar_form_2()">
-                    <div class="form-group">
-                        <h1 class="mb-0" id="Enviar_Sugestao" >Envie sua Sugestão</h1>
-                        <h5 class="text-secundary">Informe o seu email:</h5>
-                        <input type="email" class="form-control" placeholder="nome@examplo.com" id="email_sugestao">
-                        <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar o seu email com mais ninguem.</small>
-                        <h5 class="text-secundary">Sua sugestão:</h5>
-                        <textarea class="form-control" rows="5" id="evento_sugestao" placeholder="Descreva o que você gostaria que o sistema fizesse e como isso ajudaria a melhorar a experência."></textarea>
-                        </br>
-                        <input type="submit" class="btn-primary" value="Enviar">
-                    </div> 
-                </form>
-            </br>
-            <!--Formas de Contato-->
-            <h1 class="mb-0" id="Contato" >Nossas formas de contato:</h1>
+        <!-- Formulário Contato -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8 col-sm-10">
+                        <div class="contact p-5">
+                            <h1 class="mb-4">Entre em contato</h1>
+                            <p class="mb-4">Contamos com seu apoio para feedbacks e sugestões!</p>
+                            <form id="formContato" novalidate onsubmit="return validar_form()">
+                                <div class="row gx-4 gy-3">
+                                    <div class="col-xl-6">
+                                        <input id="nomeUsuario" name="nomeUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Nome">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <input id="emailUsuario" name="emailUsuario" type="email" class="form-control bg-white border-0 py-3 px-4" placeholder="Email">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <input id="telUsuario" name="telUsuario" type="tel" class="form-control bg-white border-0 py-3 px-4" placeholder="Telefone">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <input id="assuntoUsuario" name="assuntoUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Assunto">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="msgUsuario" name="msgUsuario" class="form-control bg-white border-0 py-3 px-4" rows="7" cols="10" placeholder="Sua mensagem"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn-hover-bg btn btn-primary w-100 py-3 px-5" type="submit">Enviar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Formulário Contato -->
+
+            <!--Outras formas de Contato-->
+            <h1 class="mb-0" id="Contato" >Outras formas de contato:</h1>
         </br>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-6 col-xl-2">
