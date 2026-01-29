@@ -54,7 +54,7 @@
                     return false;
                 }
 
-                if(sobrenome.value == '')
+                else if(Sobrenome.value == '')
                 {
                     Swal.fire
                     ({
@@ -67,7 +67,7 @@
                     return false;
                 }
 
-                if(email.value == '')
+                else if(email.value == '')
                 {
                     Swal.fire
                     ({
@@ -80,7 +80,7 @@
                     return false;
                 }
 
-                if(Celular.value == '')
+                else if(celular.value == '')
                 {
                     Swal.fire
                     ({
@@ -93,7 +93,7 @@
                     return false;
                 }
 
-                if(senha.value == '')
+                else if(senha.value == '')
                 {
                     Swal.fire
                     ({
@@ -106,7 +106,7 @@
                     return false;
                 }
 
-                if(confirmeSenha.value == '')
+                else if(confirmeSenha.value == '')
                 {
                     Swal.fire
                     ({
@@ -116,10 +116,11 @@
                         confirmButtonText: 'OK',
                         confirmButtonColor: 'var(--bs-primary)',
                     });
-                    return false;}
+                    return false;
+                }
                 
                     
-                if (senha.value != confirmeSenha.value)
+                else if (senha.value != confirmeSenha.value)
                 {   
                     Swal.fire
                     ({
@@ -132,6 +133,7 @@
                     return false;
                 }
                 return true;
+                   
             }
         </script>
 
@@ -154,7 +156,7 @@
                                         <h2 class="mb-3 text-center">Cadastre-se</h2>
                                         <p class="mb-4 text-center"> Crie sua conta para acessar nossos serviços.</p>
 
-                                        <form id="formCadastro" novalidate>
+                                        <form id="formCadastro" onsubmit="return validar_form()">
                                             <div class="row gx-3 gy-3">
                                                 <div class="col-md-6">
                                                     <input id="primeiroNome" type="text" name="primeiroNome" class="form-control bg-white border-0 py-3 px-4" placeholder="Primeiro nome">
