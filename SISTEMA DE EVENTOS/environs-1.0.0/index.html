@@ -26,6 +26,60 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+
+                const form = document.getElementById("formContato");
+
+                const nomeInput = document.getElementById("nomeUsuario");
+                const emailInput = document.getElementById("emailUsuario");
+                const telInput = document.getElementById("telUsuario");
+                const assuntoInput = document.getElementById("assuntoUsuario");
+                const msgInput = document.getElementById("msgUsuario");
+
+                form.addEventListener("submit", function(e){
+
+                    e.preventDefault();
+
+                    const nome = nomeInput.value;
+                    const email = emailInput.value;
+                    const tel = telInput.value.replace(/\D/g, "");  // considera apenas os números inseridos
+                    const assunto = assuntoInput.value;
+                    const msg = msgInput.value;
+
+
+                    // Campo vazio
+                    if(!nome || !email || !tel || !assunto || !msg){
+                        alert("Preencha todos os campos!");
+                        return;
+                    }
+                    
+                    // Verificar email
+                    if(!email.includes("@")){
+                        alert("Email inválido!");
+                        return;
+                    }
+
+                    // Verifica se tem menos de 10 caracteres
+                    if(tel.length < 10){
+                        alert("Telefone inválido!");
+                        return;
+                    }
+
+                    alert("Mensagem enviada com sucesso!");
+
+                    form.reset(); // Limpar
+
+                });
+
+            });
+        </script>
+
+
+
     </head>
 
     <body>
@@ -136,11 +190,7 @@
         </div>
         <!-- Carousel End -->
 
-
-
-
-
-        <!-- About Start -->
+        <!-- Sobre -->
         <div class="container-fluid about  py-5">
             <div class="container py-5">
                 <div class="row g-5">
@@ -218,9 +268,9 @@
                 </div>
             </div>
         </div>
-        <!-- About End -->
+        <!-- Sobre -->
 
-        <!-- Donation Start -->
+        <!-- Paginas -->
         <div class="container-fluid donation py-5 bg-light">
             <div class="container py-5">
                 <div class="text-center mx-auto pb-5" style="max-width: 800px;">
@@ -269,9 +319,9 @@
                 </div>
             </div>
         </div>
-        <!-- Donation End -->
+        <!-- Paginas -->
 
-        <!-- Events Start -->
+        <!-- Eventos -->
         <div class="container-fluid event py-5">
             <div class="container py-5">
                 <div class="text-center mx-auto mb-5" style="max-width: 800px;">
@@ -361,9 +411,9 @@
                 </div>
             </div>
         </div>
-        <!-- Events End -->
+        <!-- Eventos -->
 
-        <!-- Gallery Start -->
+        <!-- Galeria -->
         <div class="container-fluid gallery py-5 px-0">
             <div class="text-center mx-auto pb-5" style="max-width: 800px;">
                 <h1 class="text-uppercase text-primary">Our work</h1>
@@ -439,9 +489,9 @@
                 </div>
             </div>
         </div>
-        <!-- Gallery End -->
+        <!-- Galeria -->
 
-        <!-- Contact Start -->
+        <!-- Formulário Contato -->
         <div class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -449,22 +499,22 @@
                         <div class="contact p-5">
                             <h1 class="mb-4">Entre em contato</h1>
                             <p class="mb-4">Contamos com seu apoio para feedbacks e sugestões!</p>
-                            <form>
+                            <form id="formContato" novalidate>
                                 <div class="row gx-4 gy-3">
                                     <div class="col-xl-6">
-                                        <input type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Nome">
+                                        <input id="nomeUsuario" name="nomeUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Nome">
                                     </div>
                                     <div class="col-xl-6">
-                                        <input type="email" class="form-control bg-white border-0 py-3 px-4" placeholder="Email">
+                                        <input id="emailUsuario" name="emailUsuario" type="email" class="form-control bg-white border-0 py-3 px-4" placeholder="Email">
                                     </div>
                                     <div class="col-xl-6">
-                                        <input type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Telefone">
+                                        <input id="telUsuario" name="telUsuario" type="tel" class="form-control bg-white border-0 py-3 px-4" placeholder="Telefone">
                                     </div>
                                     <div class="col-xl-6">
-                                        <input type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Assunto">
+                                        <input id="assuntoUsuario" name="assuntoUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Assunto">
                                     </div>
                                     <div class="col-12">
-                                        <textarea class="form-control bg-white border-0 py-3 px-4" rows="7" cols="10" placeholder="Sua mensagem"></textarea>
+                                        <textarea id="msgUsuario" name="msgUsuario" class="form-control bg-white border-0 py-3 px-4" rows="7" cols="10" placeholder="Sua mensagem"></textarea>
                                     </div>
                                     <div class="col-12">
                                         <button class="btn-hover-bg btn btn-primary w-100 py-3 px-5" type="submit">Enviar</button>
@@ -476,7 +526,7 @@
                 </div>
             </div>
         </div>
-        <!-- Contact End -->
+        <!-- Formulário Contato -->
 
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4">
