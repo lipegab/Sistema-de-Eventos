@@ -54,79 +54,79 @@
                 return false;
             }
 
-                else if (Sobrenome.value === '') {
-                    Swal.fire
-                        ({
-                            icon: 'error',
-                            title: 'Erro',
-                            text: 'Por favor, preencha seu sobrenome.',
-                            confirmButtonText: 'OK',
-                            confirmButtonColor: 'var(--bs-primary)',
+            if (sobrenome.value === '') {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Por favor, preencha seu sobrenome.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
 
-                        });
-                    return false;
-                }
+                    });
+                return false;
+            }
 
-                    else if (email.value === '') {
-                        Swal.fire
-                            ({
-                                icon: 'error',
-                                title: 'Erro',
-                                text: 'Por favor, preencha seu email.',
-                                confirmButtonText: 'OK',
-                                confirmButtonColor: 'var(--bs-primary)',
-                            });
-                        return false;
-                    }
+            if (email.value === '') {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Por favor, preencha seu email.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                return false;
+            }
 
-                        else if (celular.value === '') {
-                            Swal.fire
-                                ({
-                                    icon: 'error',
-                                    title: 'Erro',
-                                    text: 'Por favor, preencha seu celular.',
-                                    confirmButtonText: 'OK',
-                                    confirmButtonColor: 'var(--bs-primary)',
-                                });
-                            return false;
-                        }
+            if (celular.value === '') {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Por favor, preencha seu celular.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                return false;
+            }
 
-                            else if (senha.value === '') {
-                                Swal.fire
-                                    ({
-                                        icon: 'error',
-                                        title: 'Erro',
-                                        text: 'Por favor, preencha sua senha.',
-                                        confirmButtonText: 'OK',
-                                        confirmButtonColor: 'var(--bs-primary)',
-                                    });
-                                return false;
-                            }
+            if (senha.value === '') {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Por favor, preencha sua senha.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                return false;
+            }
 
-                                else if (confirmeSenha.value === '') {
-                                    Swal.fire
-                                        ({
-                                            icon: 'error',
-                                            title: 'Erro',
-                                            text: 'Por favor, preencha seu email.',
-                                            confirmButtonText: 'OK',
-                                            confirmButtonColor: 'var(--bs-primary)',
-                                        });
-                                    return false;
-                                }
+            if (confirmeSenha.value === '') {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Por favor, preencha sua senha.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                return false;
+            }
 
 
-                                    else if (senha.value !== confirmeSenha.value) {
-                                        Swal.fire
-                                            ({
-                                                icon: 'error',
-                                                title: 'Erro',
-                                                text: 'Por favor, preencha seu email.',
-                                                confirmButtonText: 'OK',
-                                                confirmButtonColor: 'var(--bs-primary)',
-                                            });
-                                        return false;
-                                    }
+            if (senha.value !== confirmeSenha.value) {
+                Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text: 'Verifique se as senhas são iguais.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                return false;
+            }
             return;
 
         }
