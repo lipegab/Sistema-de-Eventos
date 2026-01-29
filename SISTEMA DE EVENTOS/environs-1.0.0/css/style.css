@@ -866,16 +866,15 @@ a:hover {
 /* Texto limitado */
 .event .event-item p {
     cursor: pointer;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    line-height: 1.6em;     /* altura de uma linha */
+    max-height: 6.4em;      /* 1.6 x 4 linhas */
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: max-height 0.3s ease;
 }
 
 /* Texto expandido */
 .event .event-item p.expandido {
-    -webkit-line-clamp: unset;
+      max-height: 1000px; /* valor grande para "abrir" o texto */
 }
 
 /* Botão alinhado embaixo */
@@ -885,12 +884,8 @@ a:hover {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .event .event-item img {
-        height: 180px;
-    }
-
     .event .event-item p {
-        -webkit-line-clamp: 3;
+        max-height: 4.8em; /* 3 linhas no mobile */
     }
 }
 
