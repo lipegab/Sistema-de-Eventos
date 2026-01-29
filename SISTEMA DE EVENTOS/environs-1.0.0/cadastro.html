@@ -25,7 +25,6 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
         
         <!-- Template Stylesheet -->
-
         <link href="css/stlye2.css" rel="stylesheet">
         
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -55,7 +54,7 @@
                     return false;
                 }
 
-                if(Sobrenome.value == '')
+                if(sobrenome.value == '')
                 {
                     Swal.fire
                     ({
@@ -67,71 +66,133 @@
                     });
                     return false;
                 }
+
+                if(email.value == '')
+                {
+                    Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text : 'Por favor, preencha seu email.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                    return false;
+                }
+
+                if(Celular.value == '')
+                {
+                    Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text : 'Por favor, preencha seu celular.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                    return false;
+                }
+
+                if(senha.value == '')
+                {
+                    Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text : 'Por favor, preencha sua senha.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                    return false;
+                }
+
+                if(confirmeSenha.value == '')
+                {
+                    Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text : 'Por favor, preencha seu email.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                    return false;}
+                
+                    
+                if (senha.value != confirmeSenha.value)
+                {   
+                    Swal.fire
+                    ({
+                        icon: 'error',
+                        title: 'Erro',
+                        text : 'Por favor, preencha seu email.',
+                        confirmButtonText: 'OK',
+                        confirmButtonColor: 'var(--bs-primary)',
+                    });
+                    return false;
+                }
+                return true;
             }
         </script>
 
 
-
-        <link href="css/style2.css" rel="stylesheet">
-
     </head>
 
     <body>
-            <div class="formCadastro">
-                <div class="container" > 
-                    <div class="form-image">
-                        <img src="img/undraw_writing-online_x665 (1).svg" alt="">
-                    </div>
-                    <div class="form">
-                        <form id = "cadastro_form" onsubmit= "return validar_form()">
-                            <div class="cabecalho">
-                                <div class="titulo">
-                                    <h1>CADASTRE-SE</h1>
-                                </div>
+           <div class="container-fluid bg-secondary py-5">
+            <div class="container py-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="contact p-4">
+                            <div class="row g-0 align-items-center">
+                                <!-- imagem -->
+                                <div class="col-md-5 d-none d-md-block text-center"> <img src="img/undraw_writing-online_x665 (1).svg" class="img-fluid p-3" alt="Cadastro"> </div>
 
-                            <!--  <div class="btm-login"> 
-                                    <button> <a href="#">ENTRAR</a> </button>
-                                </div> -->
+                                <!-- formulario -->
+                                <div class="col-md-7">
+                                    <div class="p-4">
+                                        <h2 class="mb-3 text-center">Cadastre-se</h2>
+                                        <p class="mb-4 text-center"> Crie sua conta para acessar nossos serviços.</p>
+
+                                        <form id="formCadastro" novalidate>
+                                            <div class="row gx-3 gy-3">
+                                                <div class="col-md-6">
+                                                    <input id="primeiroNome" type="text" name="primeiroNome" class="form-control bg-white border-0 py-3 px-4" placeholder="Primeiro nome">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <input id="sobrenome" type="text" name="sobrenome" class="form-control bg-white border-0 py-3 px-4" placeholder="Sobrenome">
+                                                </div>
+
+                                                <div class="col-12"> 
+                                                    <input id="email" type="email" name="email" class="form-control bg-white border-0 py-3 px-4"placeholder="Email">
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <input id="celular" type="tel" name="celular" class="form-control bg-white border-0 py-3 px-4" placeholder="Celular">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <input id="senha" type="password" name="senha" class="form-control bg-white border-0 py-3 px-4" placeholder="Senha">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <input id="confirmeSenha" type="password" name="confirmeSenha" class="form-control bg-white border-0 py-3 px-4" placeholder="Confirmar senha" >
+                                                </div>
+
+                                                <div class="col-12">
+                                                    <button class="btn-hover-bg btn btn-primary w-100 py-3 px-5" type="submit">Criar Conta</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="input">
-                                <div class="inputbox">
-                                    <h5 class="primeiroNome">Primeiro nome</h5>
-                                    <input id="primeiroNome" type="text" name="primeiroNome" placeholder="Digite seu priemiro nome:" class="form-control">
-                                </div>
-
-                                <div class="inputbox">
-                                    <h5 class="sobrenome"> Sobrenome</h5>
-                                    <input id="sobrenome" type="text" name="sobrenome" placeholder="Digite o seu sobrenome:" class="form-control">
-                                </div>
-
-                                <div class="inputbox">
-                                    <h5 class="email">Email</h5>
-                                    <input id="email" type="email" name="email" placeholder="Digite o seu email:" class="form-control" >
-                                </div>
-
-                                <div class="inputbox">
-                                    <h5 class="celular">Celular</h5>
-                                    <input id="celular" type="tel" name="celular" placeholder="(xx) xxxx-xxxx" class="form-control">
-                                </div>
-
-                                <div class="inputbox">
-                                    <h5 class="senha">Senha</h5>
-                                    <input id="senha" type="password" name="senha" placeholder="Digite a sua senha:" class="form-control" >
-                                </div>
-
-                                <div class="inputbox">
-                                    <h5 class="senha">Confirme a sua senha </h5>
-                                    <input id="confirmeSenha" type="password" name="confirmeSenha" placeholder="Digite a sua senha:" class="form-control">
-                                </div>
-                            </div>
-
-                            <div class="BotaoContinuar">
-                                <button> <a href="#">Continuar</a></button>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </diV>
+            </div>
+        </div>
     
     </body>
 </html>
