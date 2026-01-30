@@ -30,7 +30,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             // Função para valdiaro o formulário de cadastrar um evento
-            function validar_form ()
+            function validar_form_eventos ()
                 {
                     let nome_evento = document.getElementById('nome_evento');
                     let desc_evento = document.getElementById('desc_evento');
@@ -132,7 +132,7 @@
 
         <script>
         // Função para validar o formulário de sugestão para o sistema de eventos.
-            function validar_form()
+            function validar_form_sugestoes()
                 {
                     let Nome = document.getElementById('nomeUsuario');
                     let Email = document.getElementById('emailUsuario');
@@ -305,7 +305,7 @@
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
                 <h3 class="text-white display-3 mb-4">Nossos Serviços</h1>
-                <p class="fs-5 text-white mb-4">Cadastre os seus eventos e envie uma sugestão para o nosso sitee entre em contato conosco!</p>  
+                <p class="fs-5 text-white mb-4">Cadastre os seus eventos, envie uma sugestão para o nosso site e entre em contato conosco em nossas redes!</p>  
             </div>
         </div>
         <!-- Header End -->
@@ -350,7 +350,7 @@
                 </div>
                 </br>
         <!--Formulário de Cadastrar evento-->
-                <form onsubmit= "return validar_form()" id="evento_form">
+                <form onsubmit= "return validar_form_eventos()" id="evento_form">
                     <div class="form-group">
                         <h1 class="mb-0" id="Cadastrar_Evento" >Cadastre o seu Evento:</h1>
                         <h5 class="text-secundary">Informe o nome do seu evento:</h5>
@@ -379,7 +379,7 @@
                     </div> 
                 </form>
             </br>
-        <!-- Formulário Contato -->
+        <!-- Formulário de Sugestões -->
         <div class="container-fluid bg-light py-5">
             <div class="container py-5">
                 <div class="row justify-content-center">
@@ -387,7 +387,7 @@
                         <div class="contact p-5">
                             <h1 class="mb-4" id="Enviar_Sugestao">Envie uma sugestão!</h1>
                             <p class="mb-4">Contamos com seu apoio para feedbacks e sugestões!</p>
-                            <form id="formContato" novalidate onsubmit="return validar_form()">
+                            <form id="formContato" novalidate onsubmit="return validar_form_sugestoes()">
                                 <div class="row gx-4 gy-3">
                                     <div class="col-xl-6">
                                         <input id="nomeUsuario" name="nomeUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Nome">
@@ -452,11 +452,11 @@
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4">
             <div class="container">
-                <div class="row g-4 align-items-center">
+                <div class="row g-4 align-items-center justify-content-between">
                     <div class="col-md-4 text-center text-md-start mb-md-0">
-                        <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-body"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Cultura em Cena</a>, All right reserved.</span>
                     </div>
-                    <div class="col-md-4 text-center text-md-end text-body">
+                    <div class="col-md-4 text-center text-md-end text-body ">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->

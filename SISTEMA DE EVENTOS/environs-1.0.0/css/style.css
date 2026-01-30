@@ -10,7 +10,12 @@
     --bs-dark: #306289 !important;
     --bs-light: #AFCBE6 !important;
 }
-
+html{
+    scroll-behavior: smooth;
+}
+.bg-light{
+    --bs-secondary: #f5e3c9 !important;
+}
 /*** Spinner Start ***/
 #spinner {
     opacity: 0;
