@@ -325,8 +325,8 @@
                     <textarea class="form-control" type="text" id="Resenha" rows="6"> </textarea><br>
                     
                     <h5 class="text-secundary">Você Recomenda este evento?</h5>
-                    <input type="radio" name="Recomendação"> Sim
-                    <input type="radio" name="Recomendação"> Não
+                    <input type="radio" name="Recomendação" value="Sim"> Sim
+                    <input type="radio" name="Recomendação" value="Não"> Não
 
                     <h5 class='text-secundary'> Dê uma Nota para o Evento de 0 a 10:</h5>
                     <input type="number" class="form-control" id="Nota" min="0" max="10"><br>
@@ -380,9 +380,14 @@
         <script src="js/owl.carousel.min.js"></script>
 
         <script>
+              /** Seleciona todos os parágrafos dos eventos**/
             document.querySelectorAll('.event .event-item p').forEach(p => {
+               
+             /** Adiciona evento de clique**/
             p.addEventListener('click', function () {
-                this.classList.toggle('expandido');
+
+                this.classList.toggle('expandido'); /** Alterna a classe "expandido" **/
+                
             });
         });
         </script>
