@@ -383,10 +383,10 @@
               /** Seleciona todos os parágrafos dos eventos**/
             document.querySelectorAll('.event .event-item p').forEach(p => {
                
-             /** Adiciona evento de clique**/
+             /** Adiciona o evento de clique e a função percorre cada paragráfo encontrado**/
             p.addEventListener('click', function () {
 
-                this.classList.toggle('expandido'); /** Alterna a classe "expandido" **/
+                this.classList.toggle('expandido'); /** Alterna a classe "expandido", ou seja se não existir, adiciona e se já existir remove **/
                 
             });
         });
