@@ -51,11 +51,9 @@ body {
 h5{
     font-size: 27px;
 }
-.my-4,.mb-4{
-    text-align: justify;
-}
 p {
     color: var(--bs-dark) !important;
+    text-align: justify;
 }
 a {
     color: var(--bs-primary);
@@ -311,7 +309,7 @@ a:hover {
 
 /*** Single Page Hero Header Start ***/
 .bg-breadcrumb {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/imagem_fundo.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/imagem_fundo.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -598,8 +596,8 @@ a:hover {
     background: rgba(0, 0, 0, .2);
     color: var(--bs-white) !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: end;
+    justify-content: start;
     transition: 0.5s;
     
 }
