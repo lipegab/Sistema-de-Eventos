@@ -891,7 +891,10 @@ a:hover {
     }
 }
 
-
+.donation-item {
+    height: 400px;
+    object-fit: cover;
+}
 
 /*CADASTRO*/
 
