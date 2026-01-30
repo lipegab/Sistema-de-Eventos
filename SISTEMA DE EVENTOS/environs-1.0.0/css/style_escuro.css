@@ -1,20 +1,38 @@
 /*** Cores  do CSS ***/
 :root {
+    /* COR DO FUNDO */
+    --bs-body-bg: #1a1a1a !important;
     /* COR PRINCIPAL*/
     --bs-primary: #306289 !important; 
     
     /* COR SECUNDÁRIA (Usada em detalhes e hover) */
-    --bs-secondary: #f5e3c9 !important; 
-    --bs-info: #6695C6 !important;
+    --bs-secondary: #2d2d2d !important; 
+    --bs-info: #6695C6 !important; /* Texto claro (bege) */
     /* Outras cores*/
-    --bs-dark: #306289 !important;
-    --bs-light: #AFCBE6 !important;
+    --bs-dark: #f5e3c9 !important; /* Invertido para texto claro */
+    --bs-light: #6695C6 !important;
+}
+body{
+    background-color: var(--bs-body-bg) !important;
+    color: #f5e3c9 !important;
+}
+.bg-light, .bg-secondary, .bg-white, .container-fluid.bg-light, .container-fluid.bg-white {
+    background-color: var(--bs-secondary) !important;
+}
+#spinner {
+    background-color: var(--bs-body-bg) !important;
 }
 html{
     scroll-behavior: smooth;
+    background-color: var(--bs-body-bg);
 }
-.bg-light{
-    --bs-secondary: #f5e3c9 !important;
+/* Força a Navbar a ficar escura */
+.navbar {
+    background-color: var(--bs-secondary) !important;
+}
+
+.sticky-top {
+    background-color: var(--bs-secondary) !important;
 }
 /*** Spinner Start ***/
 #spinner {
@@ -51,29 +69,41 @@ html{
     color: var(--bs-secondary) !important;
 }
 body {
-    color: var(--bs-dark) !important; /* Ou use #333333 se preferir um cinza fixo */
+    color: var(--bs-dark) !important;
 }
-h5{
+p, h1, h2, h3, h4, h5, h6 {
+    color: #FFFFFF !important;
+}
+    h5{
     font-size: 27px;
 }
 p {
-    color: var(--bs-dark) !important;
     text-align: justify;
 }
 a {
-    color: var(--bs-primary);
+    color: #FFFFFF !important;
     text-decoration: none;
 }
 a:hover {
-    color: var(--bs-light); 
+    color: var(--bs-info) !important; 
 }
-.form-control{
-    border-color: var(--bs-primary)!important;
+.form-control, .form-group{
+    background-color: #2d2d2d !important; 
+    color: #ffffff !important; 
+    border-color: var(--bs-primary) !important;
 }
 .form-control:focus{
     border-color: var(--bs-primary)!important;
     box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--bs-primary), transparent 75%) !important;
 }
+.form-control::placeholder {
+    color: #888888 !important;
+}
+.contact, .footer {
+    background-color: rgba(48, 98, 137, 0.1) !important;
+    border-color: #444444 !important;
+}
+
 /*** Button Start ***/
 .btn-primary {
     background-color: var(--bs-primary) !important;
@@ -81,8 +111,8 @@ a:hover {
     color: #FFFFFF !important; 
 }
 .btn-primary:hover {
-    background-color: var(--bs-light) !important;
-    border-color: var(--bs-dark) !important;
+    background-color: var(--bs-secondary) !important;
+    border-color: var(--bs-secondary) !important;
     color: var(--bs-primary) !important; 
 }
 .btn-primary:focus, .btn-primary:active {
@@ -91,7 +121,6 @@ a:hover {
     box-shadow: 0 0 0 0.25rem var(--bs-primary) !important; 
     opacity: 0.9; 
 }
-
 .btn {
     font-weight: 600;
     transition: .5s;
@@ -161,7 +190,7 @@ a:hover {
 
 .topbar a:hover,
 .topbar a i:hover {
-    color: var(--bs-light) !important;
+    color: var(--bs-secondary) !important;
 }
 
 
@@ -184,11 +213,11 @@ a:hover {
     transition: .5s;
 }
 
-/*** Navbar Links Ativos e Hover ***/
-.navbar-light .navbar-nav .nav-link.active,
-.navbar-light .navbar-nav .nav-link:hover {
-    color: var(--bs-primary) !important;
-    font-weight: bold; /* Adicione um negrito para ajudar na visualização */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active,
+.sticky-top.bg-white .navbar .navbar-nav .nav-link:hover,
+.sticky-top.bg-white .navbar .navbar-nav .nav-link.active {
+    color: var(--bs-primary);
 }
 
 .navbar .dropdown-toggle::after {

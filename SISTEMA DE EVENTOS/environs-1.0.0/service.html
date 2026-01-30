@@ -26,7 +26,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link id="link_css" href="css/style.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             // Função para valdiaro o formulário de cadastrar um evento
@@ -276,6 +276,9 @@
                             <div class="topbar-icon d-flex align-items-center justify-content-end">
                                 <a href="#" class="btn-square text-white me-2"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#" class="btn-square text-white me-2"><i class="fab fa-instagram"></i></a>
+                                <button id="btn-tema" class="btn-square nav-link text-white me-2" style="border: none; background: transparent;">
+                                <i id="icone-tema" class="fas fa-moon"></i>                   
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -375,7 +378,7 @@
                         <input type="email" class="form-control" placeholder="nome@examplo.com" id="email_evento">
                         <small id="emailHelp" class="form-text text-muted">Nós não vamos compartilhar o seu email com mais ninguem.</small>
                         </br>
-                        <input type="submit" class="btn-primary" value="Enviar">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
                     </div> 
                 </form>
             </br>

@@ -84,3 +84,27 @@
 
 })(jQuery);
 
+// Mudar Tema
+const btn_tema = document.getElementById('btn-tema');
+const icone_tema = document.getElementById('icone-tema')
+const link = document.getElementById('link_css')
+let tema_escuro = false
+btn_tema.addEventListener('click', ()=> {
+    if (!tema_escuro){
+        link.href = "css/style_escuro.css"
+        icone_tema.classList.remove('fa-moon');
+        icone_tema.classList.add('fa-sun');
+        localStorage.setItem('theme', 'dark');
+    }
+    else {
+        link.href = "css/style.css"
+        icone_tema.classList.remove('fa-sun');
+        icone_tema.classList.add('fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+    tema_escuro = !tema_escuro
+})
+if (localStorage.getItem('theme') === 'dark') {
+    link.href = "css/style_escuro.css"
+    icone_tema.classList.replace('fa-moon', 'fa-sun');
+}
