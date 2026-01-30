@@ -566,6 +566,7 @@ a:hover {
     background: var(--bs-secondary);
 }
 
+/*Botão que leva para o local no Google Maps*/
 .btn_mapa{
     text-decoration: none;
     cursor:pointer;
@@ -575,7 +576,10 @@ a:hover {
 .btn_mapa:hover{
     color: var(--bs-primary);
 }
+
 /*** Events End ***/
+
+
 
 
 /*** Blog Start ***/
@@ -888,6 +892,8 @@ a:hover {
         max-height: 4.8em; /* 3 linhas no mobile */
     }
 }
+
+
 
 /*CADASTRO*/
 
