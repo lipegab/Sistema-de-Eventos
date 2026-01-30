@@ -29,55 +29,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function(){
-
-                const form = document.getElementById("formContato");
-
-                const nomeInput = document.getElementById("nomeUsuario");
-                const emailInput = document.getElementById("emailUsuario");
-                const telInput = document.getElementById("telUsuario");
-                const assuntoInput = document.getElementById("assuntoUsuario");
-                const msgInput = document.getElementById("msgUsuario");
-
-                form.addEventListener("submit", function(e){
-
-                    e.preventDefault();
-
-                    const nome = nomeInput.value;
-                    const email = emailInput.value;
-                    const tel = telInput.value.replace(/\D/g, "");  // considera apenas os números inseridos
-                    const assunto = assuntoInput.value;
-                    const msg = msgInput.value;
-
-
-                    // Campo vazio
-                    if(!nome || !email || !tel || !assunto || !msg){
-                        alert("Preencha todos os campos!");
-                        return;
-                    }
-                    
-                    // Verificar email
-                    if(!email.includes("@")){
-                        alert("Email inválido!");
-                        return;
-                    }
-
-                    // Verifica se tem menos de 10 caracteres
-                    if(tel.length < 10){
-                        alert("Telefone inválido!");
-                        return;
-                    }
-
-                    alert("Mensagem enviada com sucesso!");
-
-                    form.reset(); // Limpar
-
-                });
-
-            });
-        </script>
-
 
 
     </head>
@@ -490,43 +441,6 @@
             </div>
         </div>
         <!-- Galeria -->
-
-        <!-- Formulário Contato -->
-        <div class="container-fluid bg-light py-5">
-            <div class="container py-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8 col-sm-10">
-                        <div class="contact p-5">
-                            <h1 class="mb-4">Entre em contato</h1>
-                            <p class="mb-4">Contamos com seu apoio para feedbacks e sugestões!</p>
-                            <form id="formContato" novalidate>
-                                <div class="row gx-4 gy-3">
-                                    <div class="col-xl-6">
-                                        <input id="nomeUsuario" name="nomeUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Nome">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input id="emailUsuario" name="emailUsuario" type="email" class="form-control bg-white border-0 py-3 px-4" placeholder="Email">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input id="telUsuario" name="telUsuario" type="tel" class="form-control bg-white border-0 py-3 px-4" placeholder="Telefone">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input id="assuntoUsuario" name="assuntoUsuario" type="text" class="form-control bg-white border-0 py-3 px-4" placeholder="Assunto">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea id="msgUsuario" name="msgUsuario" class="form-control bg-white border-0 py-3 px-4" rows="7" cols="10" placeholder="Sua mensagem"></textarea>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn-hover-bg btn btn-primary w-100 py-3 px-5" type="submit">Enviar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Formulário Contato -->
 
         <!-- Copyright Start -->
         <div class="container-fluid copyright py-4">
